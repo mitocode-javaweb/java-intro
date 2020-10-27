@@ -41,11 +41,13 @@ public class CuentaAhorros extends Cuenta implements OperacionBancaria {
 	}
 
 	@Override
-	public void retiro(double monto) {
-		if (monto <= saldo) {
+	public void retiro(double monto) throws FondosInsuficientesException, CuentaBloqueadaException {
+		if(estado == EstadoCuenta.BLOQUEADO) {
+			throw new CuentaBloqueadaException("La cuenta está bloqueada");
+		} else if (monto <= saldo) {
 			super.saldo -= monto;
 		} else {
-			System.out.println("Saldo insuficiente");
+			throw new FondosInsuficientesException("No tiene saldo suficiente");
 		}
 	}
 }

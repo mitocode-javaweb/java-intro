@@ -7,10 +7,14 @@ public abstract class Cuenta {
 	String numeroCuenta;
 	String nombreTitular;
 	protected double saldo;
+	
+	protected EstadoCuenta estado;
 
 	public Cuenta(String numeroCuenta, String nombreTitular) {
 		this.numeroCuenta = numeroCuenta;
 		this.nombreTitular = nombreTitular;
+		
+		this.estado = EstadoCuenta.ACTIVO;
 	}
 
 	public double getSaldo() {

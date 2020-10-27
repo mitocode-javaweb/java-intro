@@ -9,6 +9,8 @@ public class Programa08_0 {
 		Scanner sc = null;
 		
 		try {
+//			int numero = 0/0;
+			
 			sc = new Scanner(System.in);
 			
 			System.out.println("Ingrese numerador");
@@ -24,9 +26,12 @@ public class Programa08_0 {
 		} catch (DivisionEntreCero e) {
 			System.out.println("error: " + e.getMessage());
 		} catch(InputMismatchException e) {
+			e.printStackTrace();
 			System.out.println("Ingresa un número válido");
 		} finally {
-			sc.close();
+			if(sc != null) {
+				sc.close();				
+			}
 		}
 		
 	}
