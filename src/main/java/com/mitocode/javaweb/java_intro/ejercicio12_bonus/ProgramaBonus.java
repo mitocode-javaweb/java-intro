@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class ProgramaBonus {
 
 	public static void main(String[] args) {
+		agendaTelefonica();
+	}
+
+	public static void agendaTelefonica() {
 		Scanner scanner = new Scanner(System.in);
 		int opcion = -1; // Guardaremos la opcion del usuario
 		boolean salir = false;
